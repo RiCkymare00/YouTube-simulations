@@ -60,7 +60,7 @@
 
 /* Choice of the billiard table, see list in global_pdes.c  */
 
-#define B_DOMAIN 10      /* choice of domain shape */
+#define B_DOMAIN 3      /* choice of domain shape */
 
 #define CIRCLE_PATTERN 0    /* pattern of circles, see list in global_pdes.c */
 
@@ -215,7 +215,7 @@
 #define INITIAL_SHIFT 20.0          /* time shift of initial wave packet (in oscillation periods) */
 #define WAVE_PACKET_SHIFT 200.0     /* time shift between wave packets (in oscillation periods) */
 #define FADE_IN_OBSTACLE 0      /* set to 1 to fade color inside obstacles */
-#define SHADE_2D 0       /* set to 1 to add pseudo-3d shading effect */ 
+#define SHADE_2D 1       /* set to 1 to add pseudo-3d shading effect */ 
 #define SHADE_SCALE_2D 0.05  /* lower value increases sensitivity of shading */
 #define N_SOURCES 1                     /* number of sources, for option draw_sources */
 double light[2] = {0.40824829, 0.816496581};   /* location of light source for SHADE_2D option*/

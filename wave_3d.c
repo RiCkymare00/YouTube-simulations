@@ -50,8 +50,8 @@
 
 /* General geometrical parameters */
 
-#define WINWIDTH 	1920  /* window width */
-#define WINHEIGHT 	1150  /* window height */
+#define WINWIDTH 	1280  /* window width */
+#define WINHEIGHT 	780  /* window height */
 // #define NX 1920          /* number of grid points on x axis */
 // #define NY 1150          /* number of grid points on y axis */
 #define NX 3000          /* number of grid points on x axis */
@@ -68,12 +68,12 @@
 
 /* Choice of the billiard table */
 
-#define B_DOMAIN 76        /* choice of domain shape, see list in global_pdes.c */
+#define B_DOMAIN 999        /* choice of domain shape, see list in global_pdes.c */
 
-#define CIRCLE_PATTERN 2   /* pattern of circles or polygons, see list in global_pdes.c */
+#define CIRCLE_PATTERN 10   /* pattern of circles or polygons, see list in global_pdes.c */
 
 #define COMPARISON 0        /* set to 1 to compare two different patterns */
-#define B_DOMAIN_B 20       /* second domain shape, for comparisons */
+#define B_DOMAIN_B 999       /* second domain shape, for comparisons */
 #define CIRCLE_PATTERN_B 0  /* second pattern of circles or polygons */
 
 #define VARIABLE_IOR 1      /* set to 1 for a variable index of refraction */
@@ -118,7 +118,7 @@
 /* Physical parameters of wave equation */
 
 #define TWOSPEEDS 0          /* set to 1 to replace hardcore boundary by medium with different speed */
-#define OSCILLATE_LEFT 0     /* set to 1 to add oscilating boundary condition on the left */
+#define OSCILLATE_LEFT 0	/* set to 1 to add oscilating boundary condition on the left */
 #define OSCILLATE_TOPBOT 0   /* set to 1 to enforce a planar wave on top and bottom boundary */
 #define OSCILLATION_SCHEDULE 3  /* oscillation schedule, see list in global_pdes.c */
 #define OSCIL_YMAX 0.35      /* defines oscillation range */
@@ -149,7 +149,7 @@
 #define ALTERNATE_OSCILLATING_SOURCE 1  /* set to 1 to alternate sign of oscillating source */
 
 #define ADD_WAVE_PACKET_SOURCES 0       /* set to 1 to add several sources emitting wave packets */
-#define WAVE_PACKET_SOURCE_TYPE 1       /* type of wave packet sources */
+#define WAVE_PACKET_SOURCE_TYPE 2       /* type of wave packet sources */
 #define N_WAVE_PACKETS 15               /* number of wave packets */
 #define WAVE_PACKET_RADIUS 20            /* radius of wave packets */
 
@@ -157,7 +157,7 @@
 
 #define B_COND 2
 
-#define PRECOMPUTE_BC 0     /* set to 1 to compute neighbours for Laplacian in advance */
+#define PRECOMPUTE_BC 1     /* set to 1 to compute neighbours for Laplacian in advance */
 
 /* Parameters for length and speed of simulation */
 
@@ -214,7 +214,7 @@
 #define REP_AXO_3D 0        /* linear projection (axonometry) */
 #define REP_PROJ_3D 1       /* projection on plane orthogonal to observer line of sight */
 
-#define ROTATE_VIEW 0       /* set to 1 to rotate position of observer */
+#define ROTATE_VIEW 1       /* set to 1 to rotate position of observer */
 #define ROTATE_ANGLE 360.0  /* total angle of rotation during simulation */
 
 /* Color schemes */
@@ -287,7 +287,7 @@
 #define TIMESERIES_NVALUES 400  /* number of values plotted in time series */
 #define DRAW_WAVE_SOURCE 0      /* set to 1 to draw source of wave at (wave_source_x, wave_source_y) */
 #define HRES 1          /* dummy, only used by rde.c */
-#define SHADE_2D 0       /* set to 1 to add pseudo-3d shading effect */ 
+#define SHADE_2D 1       /* set to 1 to add pseudo-3d shading effect */ 
 #define SHADE_SCALE_2D 0.05  /* lower value increases sensitivity of shading */
 #define N_SOURCES 1                     /* number of sources, for option draw_sources */
 #define XYIN_INITIALISED (B_DOMAIN == D_IMAGE)

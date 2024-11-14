@@ -64,7 +64,7 @@
 #define NLAPLACIANS 2   /* number of fields for which to compute Laplacian */
 
 #define SPHERE 1        /* set to 1 to simulate equation on sphere */
-#define DPOLE 1         /* safety distance to poles */
+#define DPOLE 0         /* safety distance to poles */
 #define DSMOOTH 1       /* size of neighbourhood of poles that are smoothed */
 #define SMOOTHPOLE 0.05  /* smoothing coefficient at poles */
 #define SMOOTHCOTPOLE 0.05  /* smoothing coefficient of cotangent at poles */
@@ -85,8 +85,8 @@
 
 #define ANTISYMMETRIZE_WAVE_FCT 0   /* set tot 1 to make wave function antisymmetric */
 #define ADAPT_STATE_TO_BC 1     /* to smoothly adapt initial state to obstacles */
-#define OBSTACLE_GEOMETRY 86     /* geometry of obstacles, as in B_DOMAIN */
-#define BC_STIFFNESS 0.001        /* controls region of boundary condition control */
+#define OBSTACLE_GEOMETRY 1     /* geometry of obstacles, as in B_DOMAIN */
+#define BC_STIFFNESS 0.24        /* controls region of boundary condition control */
 #define CHECK_INTEGRAL 1     /* set to 1 to check integral of first field */
 
 #define JULIA_SCALE 0.5 /* scaling for Julia sets */
@@ -96,7 +96,7 @@
 
 /* Choice of the billiard table */
 
-#define B_DOMAIN 0       /* choice of domain shape, see list in global_pdes.c  */
+#define B_DOMAIN 999       /* choice of domain shape, see list in global_pdes.c  */
 
 #define CIRCLE_PATTERN 99    /* pattern of circles, see list in global_pdes.c */
 
@@ -153,7 +153,7 @@
 #define FHNC -0.01      /* parameter in FHN equation */
 #define K_HARMONIC 1.0  /* spring constant of harmonic potential */
 #define K_COULOMB 0.5   /* constant in Coulomb potential */
-#define V_MAZE 0.8      /* potential in walls of maze */
+#define V_MAZE 0.6      /* potential in walls of maze */
 #define BZQ 0.0008      /* parameter in BZ equation */
 #define BZF 1.2         /* parameter in BZ equation */
 #define B_FIELD 10.0    /* magnetic field */
@@ -275,15 +275,15 @@
 /* Plot type - height of 3D plot */
 
 #define ZPLOT 30     /* z coordinate in 3D plot */
-#define ZPLOT_B 31    /* z coordinate in second 3D plot */
+#define ZPLOT_B 41    /* z coordinate in second 3D plot */
 
 #define AMPLITUDE_HIGH_RES 1    /* set to 1 to increase resolution of P_3D_AMPLITUDE plot */
 #define NON_DIRICHLET_BC 0      /* set to 1 to draw only facets in domain, if field is not zero on boundary */
 #define WRAP_ANGLE 1            /* experimental: wrap angle to [0, 2Pi) for interpolation in angle schemes */
 #define FADE_IN_OBSTACLE 0      /* set to 1 to fade color inside obstacles */
 #define FADE_WATER_DEPTH 1      /* set to 1 to make wave color depth-dependent */
-#define DRAW_OUTSIDE_GRAY 1     /* experimental - draw outside of billiard in gray */
-#define ADD_POTENTIAL_TO_Z 1    /* set to 1 to add the external potential to z-coordinate of plot */
+#define DRAW_OUTSIDE_GRAY 0     /* experimental - draw outside of billiard in gray */
+#define ADD_POTENTIAL_TO_Z 3    /* set to 1 to add the external potential to z-coordinate of plot */
 #define ADD_POT_CONSTANT 0.35   /* constant in front of added potential */
 #define DRAW_DEPTH 0            /* set to 1 to draw water depth */
 #define DEPTH_SCALE 0.75        /* vertical scaling of depth plot */
@@ -308,7 +308,7 @@
 #define FIELD_LINE_WIDTH 1  /* width of field lines */
 #define N_FIELD_LINES 120   /* number of field lines */
 #define FIELD_LINE_FACTOR 120 /* factor controlling precision when computing origin of field lines */
-#define DRAW_BILLIARD 1     /* set to 1 to draw boundary */
+#define DRAW_BILLIARD 0     /* set to 1 to draw boundary */
 #define DRAW_BILLIARD_FRONT 0     /* set to 1 to draw boundary */
 #define FILL_BILLIARD_COMPLEMENT 1  /* set to 1 to fill complement of billiard (for certain shapes only) */
 
@@ -376,7 +376,7 @@
 #define MAZE_MAX_NGBH 4     /* max number of neighbours of maze cell */
 #define RAND_SHIFT 24        /* seed of random number generator */
 #define MAZE_XSHIFT 0.0     /* horizontal shift of maze */
-#define MAZE_WIDTH 0.0     /* half width of maze walls */
+#define MAZE_WIDTH 0.02     /* half width of maze walls */
 
 #define DRAW_COLOR_SCHEME 1     /* set to 1 to plot the color scheme */
 #define COLORBAR_RANGE 3.0      /* scale of color scheme bar */
@@ -443,7 +443,7 @@ double u_3d[2] = {0.75, -0.45};     /* projections of basis vectors for REP_AXO_
 double v_3d[2] = {-0.75, -0.45};
 double w_3d[2] = {0.0, 0.015};
 double light[3] = {-0.816496581, 0.40824829, 0.40824829};      /* vector of "light" direction for P_3D_ANGLE color scheme */
-double observer[3] = {-24.0, -8.0, 14.5};    /* location of observer for REP_PROJ_3D representation */ 
+double observer[3] = {-6.0, -6.0, 4.5};    /* location of observer for REP_PROJ_3D representation */ 
 int reset_view = 0;         /* switch to reset 3D view parameters (for option ROTATE_VIEW) */
 
 //constants for simulations on planets 
@@ -2186,7 +2186,7 @@ void animation()
 //     init_gaussian(x, y, mean, amplitude, scalex, phi, xy_in)
 //     init_coherent_state(0.0, 0.0, 10.0, 0.0, 0.1, phi, xy_in);
 //     init_coherent_state(1.5, 0, 10 , 0.5, 0.2, phi, xy_in);
-       init_coherent_state(-1.0, 0.0, 10 , 4 , 0.2, phi, xy_in);
+       init_coherent_state(-1.0, 0.0, 1 , -3 , 0.25, phi, xy_in);
 
 //     init_coherent_state_sphere(0, 0.0, PID, 10.0, 5.0, 0.1, phi, xy_in, wsphere);
 //     init_coherent_state_sphere(1, PI, PID, -10.0, 5.0, 0.1, phi, xy_in, wsphere);
@@ -2579,4 +2579,3 @@ int main(int argc, char** argv)
 
     return 0;
 }
-
