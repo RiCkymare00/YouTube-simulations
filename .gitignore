@@ -4,3 +4,11 @@ production/
 tif_drop/
 *.mp4
 **/*.mp4
+utils and more/
+.ipynb_checkpoints/
+.git/
+mangrove*
+rde*
+schrodinger*
+wave_3d*
+wave_energy*
