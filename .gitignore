@@ -6,8 +6,8 @@ tif_drop/
 **/*.mp4
 
 #utils and more
-*.ipynb_checkpoints/
-*.git/
+.ipynb_checkpoints/
+.git/
 
 # File oggetto e compilati C, C++
 *.o
