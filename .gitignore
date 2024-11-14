@@ -1,14 +1,18 @@
 *.tif
 **/*.tif
+
 production/
 tif_drop/
 *.mp4
 **/*.mp4
+
 utils and more/
-.ipynb_checkpoints/
-.git/
-mangrove*
-rde*
-schrodinger*
-wave_3d*
-wave_energy*
+*.ipynb_checkpoints/
+*.git/
+
+# File oggetto e compilati C, C++
+*.o
+*.obj
+*.so
+*.dll
+*.exe
