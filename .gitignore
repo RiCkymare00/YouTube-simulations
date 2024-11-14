@@ -1,12 +1,11 @@
 *.tif
 **/*.tif
-
 production/
 tif_drop/
 *.mp4
 **/*.mp4
 
-utils and more/
+#utils and more
 *.ipynb_checkpoints/
 *.git/
 
