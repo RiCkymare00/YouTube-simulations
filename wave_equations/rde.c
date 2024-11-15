@@ -492,7 +492,7 @@ int block_numbers[NY];    /* table of block numbers for blocking around poles */
 #include "global_pdes.c"
 #include "global_3d.c"          /* constants and global variables */
 
-#include "sub_maze.c"
+#include "../sub_maze.c"
 #include "sub_wave.c"
 #include "wave_common.c"        /* common functions for wave_billiard, wave_comparison, etc */
 

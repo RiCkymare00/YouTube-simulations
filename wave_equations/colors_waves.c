@@ -1,4 +1,4 @@
-#include "colormaps.c"
+#include "../colormaps.c"
 
 double color_amplitude(double value, double scale, int time)
 /* transforms the wave amplitude into a double in [-1,1] to feed into color scheme */
